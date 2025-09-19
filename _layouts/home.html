@@ -10,12 +10,23 @@ layout: default
                 <h2 class="hero-subtitle">VAM POMAŽE DA BUDETE EFIKASNIJI</h2>
                 <p class="hero-description">{{ site.description }}</p>
                 <div class="hero-actions">
-                    <a href="{{ '/nase-usluge/' | relative_url }}" class="btn btn-primary">Naše usluge</a>
-                    <a href="{{ '/kontakt/' | relative_url }}" class="btn btn-secondary">Kontaktiraj nas</a>
+                    <a
+                        href="{{ '/nase-usluge/' | relative_url }}"
+                        class="btn btn-primary"
+                        >Naše usluge</a
+                    >
+                    <a
+                        href="{{ '/kontakt/' | relative_url }}"
+                        class="btn btn-secondary"
+                        >Kontaktiraj nas</a
+                    >
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{ '/assets/images/hero-image.jpg' | relative_url }}" alt="ENEPLUS - Energetska efikasnost" />
+                <img
+                    src="{{ '/assets/images/hero-image.jpg' | relative_url }}"
+                    alt="ENEPLUS - Energetska efikasnost"
+                />
             </div>
         </div>
     </div>
@@ -25,7 +36,10 @@ layout: default
     <div class="container">
         <div class="section-header">
             <h2>NAŠE USLUGE</h2>
-            <p>Pružamo sveobuhvatne usluge u oblasti energetskog menadžmenta i energetske efikasnosti</p>
+            <p>
+                Pružamo sveobuhvatne usluge u oblasti energetskog menadžmenta i
+                energetske efikasnosti
+            </p>
         </div>
 
         <div class="services-grid">
@@ -35,13 +49,20 @@ layout: default
                     <i class="fas fa-{{ service.icon }}"></i>
                 </div>
                 <h3>{{ service.name }}</h3>
-                <p>Profesionalne usluge {{ service.name | downcase }} za povećanje energetske efikasnosti vašeg sistema.</p>
+                <p>
+                    Profesionalne usluge {{ service.name | downcase }} za
+                    povećanje energetske efikasnosti vašeg sistema.
+                </p>
             </div>
             {% endfor %}
         </div>
 
         <div class="services-cta">
-            <a href="{{ '/nase-usluge/' | relative_url }}" class="btn btn-outline">Pogledaj sve usluge</a>
+            <a
+                href="{{ '/nase-usluge/' | relative_url }}"
+                class="btn btn-outline"
+                >Pogledaj sve usluge</a
+            >
         </div>
     </div>
 </section>
@@ -65,7 +86,11 @@ layout: default
             </div>
             <div class="iso-info">
                 <h2>ISO 50001</h2>
-                <p>Implementiramo sistem energetskog menadžmenta prema ISO 50001 standardu koji omogućava kontinualno poboljšanje energetskih performansi.</p>
+                <p>
+                    Implementiramo sistem energetskog menadžmenta prema ISO
+                    50001 standardu koji omogućava kontinualno poboljšanje
+                    energetskih performansi.
+                </p>
             </div>
         </div>
     </div>
@@ -81,21 +106,28 @@ layout: default
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Štednja vremena</h3>
-                    <p>Naš ekspertski tim omogućava brzu implementaciju rešenja</p>
+                    <p>
+                        Naš ekspertski tim omogućava brzu implementaciju rešenja
+                    </p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">
                         <i class="fas fa-money-bill-wave"></i>
                     </div>
                     <h3>Smanjenje troškova</h3>
-                    <p>Optimizujemo procese za maksimalnu energetsku efikasnost</p>
+                    <p>
+                        Optimizujemo procese za maksimalnu energetsku efikasnost
+                    </p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Povećanje efikasnosti</h3>
-                    <p>Strategije koje omogućavaju održivi razvoj i optimizaciju</p>
+                    <p>
+                        Strategije koje omogućavaju održivi razvoj i
+                        optimizaciju
+                    </p>
                 </div>
             </div>
         </div>
@@ -107,12 +139,30 @@ layout: default
         <div class="about-content">
             <div class="about-text">
                 <h2>O NAMA</h2>
-                <p>ENEPLUS je konsultantska firma koja pruža usluge iz oblasti energetskog menadžmenta, energetske efikasnosti i projektnog menadžmenta. Naš ekspertski tim stoji Vam na raspolaganju prilikom analize i odabira najoptimalnijih rešenja koji će povećati energetsku efikasnost Vašeg sistema uz smanjenje troškova.</p>
-                <p>ENEPLUS razvija strategije i implementira rešenja koja omogućuju optimizaciju procesa, smanjenja troškova i održivi razvoj.</p>
-                <a href="{{ '/o-nama/' | relative_url }}" class="btn btn-primary">Saznaj više</a>
+                <p>
+                    ENEPLUS je konsultantska firma koja pruža usluge iz oblasti
+                    energetskog menadžmenta, energetske efikasnosti i projektnog
+                    menadžmenta. Naš ekspertski tim stoji Vam na raspolaganju
+                    prilikom analize i odabira najoptimalnijih rešenja koji će
+                    povećati energetsku efikasnost Vašeg sistema uz smanjenje
+                    troškova.
+                </p>
+                <p>
+                    ENEPLUS razvija strategije i implementira rešenja koja
+                    omogućuju optimizaciju procesa, smanjenja troškova i održivi
+                    razvoj.
+                </p>
+                <a
+                    href="{{ '/o-nama/' | relative_url }}"
+                    class="btn btn-primary"
+                    >Saznaj više</a
+                >
             </div>
             <div class="about-image">
-                <img src="{{ '/assets/images/about-image.jpg' | relative_url }}" alt="O nama - ENEPLUS tim" />
+                <img
+                    src="{{ '/assets/images/about-image.jpg' | relative_url }}"
+                    alt="O nama - ENEPLUS tim"
+                />
             </div>
         </div>
     </div>
@@ -122,14 +172,20 @@ layout: default
     <div class="container">
         <div class="section-header">
             <h2>EKSPERTSKI TIM</h2>
-            <p>Naš ekspertski tim sačinjavaju licencirani inženjeri sa višegodišnjim iskustvom u oblasti energetskog menadžmenta, realizaciji i pripremi projekata energetske efikasnosti i primene obnovljivih izvora energije.</p>
+            <p>
+                Naš ekspertski tim sačinjavaju licencirani inženjeri sa
+                višegodišnjim iskustvom u oblasti energetskog menadžmenta,
+                realizaciji i pripremi projekata energetske efikasnosti i
+                primene obnovljivih izvora energije.
+            </p>
         </div>
 
         <div class="team-grid">
             {% for member in site.team %}
             <div class="team-member">
                 <div class="member-photo">
-                    <img src="{{ '/assets/images/team/' | append: member.name | slugify | append: '.jpg' | relative_url }}" alt="{{ member.name }}" />
+                    <img
+                    <img src="{{ '/assets/images/team/' | append: member.image | relative_url }}" alt="{{ member.name }}" />
                 </div>
                 <div class="member-info">
                     <h3>{{ member.name }}</h3>
@@ -158,15 +214,35 @@ layout: default
 
                     <div class="company-legal">
                         <p><strong>PIB:</strong> {{ site.company.pib }}</p>
-                        <p><strong>Matični broj:</strong> {{ site.company.registration }}</p>
-                        <p><strong>Račun:</strong> {{ site.company.account }}</p>
+                        <p>
+                            <strong>Matični broj:</strong> {{
+                            site.company.registration }}
+                        </p>
+                        <p>
+                            <strong>Račun:</strong> {{ site.company.account }}
+                        </p>
                         <p><strong>Banka:</strong> {{ site.company.bank }}</p>
                     </div>
 
                     <div class="contact-details">
-                        <p><strong>e-mail:</strong> <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
-                        <p><strong>tel:</strong> <a href="tel:{{ site.company.phone1 }}">{{ site.company.phone1 }}</a></p>
-                        <p><strong>tel:</strong> <a href="tel:{{ site.company.phone2 }}">{{ site.company.phone2 }}</a></p>
+                        <p>
+                            <strong>e-mail:</strong>
+                            <a href="mailto:{{ site.company.email }}"
+                                >{{ site.company.email }}</a
+                            >
+                        </p>
+                        <p>
+                            <strong>tel:</strong>
+                            <a href="tel:{{ site.company.phone1 }}"
+                                >{{ site.company.phone1 }}</a
+                            >
+                        </p>
+                        <p>
+                            <strong>tel:</strong>
+                            <a href="tel:{{ site.company.phone2 }}"
+                                >{{ site.company.phone2 }}</a
+                            >
+                        </p>
                     </div>
                 </div>
             </div>
@@ -176,25 +252,37 @@ layout: default
                 <form id="contact-form" action="#" method="POST">
                     <div class="form-group">
                         <label for="name">Ime i prezime</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required />
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required />
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Tema</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                        />
                     </div>
 
                     <div class="form-group">
                         <label for="message">Poruka</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                        ></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Pošalji</button>
+                    <button type="submit" class="btn btn-primary">
+                        Pošalji
+                    </button>
                 </form>
             </div>
         </div>

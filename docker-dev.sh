@@ -48,6 +48,10 @@ DOCKER_OPTS=(
     -v "$PWD/vendor/bundle:/usr/local/bundle"
 )
 
+# Base URL and environment for CI/CD parity
+BASEURL="/eneplus"
+JEKYLL_ENV="development"
+
 case "$COMMAND" in
     "serve"|"s")
         print_info "Starting Jekyll development server..."
@@ -59,16 +63,17 @@ case "$COMMAND" in
             -p 4000:4000 \
             -it \
             "$DOCKER_IMAGE" \
-            jekyll serve --host 0.0.0.0 --livereload --incremental --trace
+            jekyll serve --host 0.0.0.0 --livereload --incremental --baseurl "$BASEURL" --trace
         ;;
 
     "build"|"b")
         print_info "Building Jekyll site..."
 
         docker run \
+            -e JEKYLL_ENV="$JEKYLL_ENV" \
             "${DOCKER_OPTS[@]}" \
             "$DOCKER_IMAGE" \
-            jekyll build --trace
+            jekyll build --baseurl "$BASEURL" --trace
 
         if [ -d "_site" ]; then
             print_info "Build completed successfully! Site is in _site/ directory"
@@ -133,9 +138,10 @@ case "$COMMAND" in
 
         # Build with same parameters as CI/CD
         docker run \
+            -e JEKYLL_ENV="$JEKYLL_ENV" \
             "${DOCKER_OPTS[@]}" \
             "$DOCKER_IMAGE" \
-            jekyll build --trace
+            jekyll build --baseurl "$BASEURL" --trace
 
         if [ -d "_site" ] && [ "$(ls -A _site)" ]; then
             print_info "✅ Test build successful - site would deploy correctly"
@@ -152,18 +158,18 @@ case "$COMMAND" in
         echo ""
         echo "Commands:"
         echo "  serve, s      Start development server with live reload (default)"
-        echo "  build, b      Build the site"
+        echo "  build, b      Build the site (matches GitHub Pages CI/CD)"
         echo "  clean, c      Clean build files and cache"
         echo "                Add --docker to also clean Docker volumes"
         echo "  install, i    Install/update gems"
         echo "  shell, sh     Start interactive shell in container"
         echo "  update, u     Update all gems"
-        echo "  test, t       Test build (same as CI/CD pipeline)"
+        echo "  test, t       Test build like CI/CD pipeline"
         echo "  help, h       Show this help"
         echo ""
         echo "Examples:"
         echo "  $0 serve              # Start development server"
-        echo "  $0 build              # Build site"
+        echo "  $0 build              # Build site exactly like GitHub Pages"
         echo "  $0 clean --docker     # Clean everything including Docker volumes"
         echo "  $0 test               # Test build like CI/CD"
         echo ""

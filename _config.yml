@@ -79,9 +79,11 @@ navigation:
 team:
   - name: "Željko Zečević"
     title: "dipl.inž.el.-master"
+    image: "zeljko-zecevic.jpg"
     phone: "+381 64 8172033"
   - name: "Nikola Vujović"
     title: "dipl.inž.maš.-master"
+    image: "nikola-vujovic.jpg"
     phone: "+381 64 8375706"
 
 # Services
