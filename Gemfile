@@ -12,6 +12,11 @@ gem "minima", "~> 2.5"
 # Performance gems
 gem "jekyll-include-cache", "~> 0.2"
 
+# Testing gems
+group :test do
+  gem "html-proofer", "~> 5.0"
+end
+
 # Development gems
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
