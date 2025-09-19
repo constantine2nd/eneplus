@@ -116,10 +116,6 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Pagination
-paginate: 5
-paginate_path: "/blog/page:num/"
-
 # Timezone
 timezone: Europe/Belgrade
 

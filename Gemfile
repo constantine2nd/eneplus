@@ -1,15 +1,19 @@
 source "https://rubygems.org"
 
-# Core Jekyll for GitHub Pages compatibility
-gem "jekyll", "~> 3.9.5"
+# Core Jekyll
+gem "jekyll", "~> 3.9.0"
 
-# Jekyll plugins
+# Essential plugins
 gem "jekyll-feed", "~> 0.12"
 gem "jekyll-sitemap", "~> 1.4"
 gem "jekyll-seo-tag", "~> 2.6"
 
-# Theme compatible with GitHub Pages
-gem "minima", "~> 2.1"
+# Required parsers and converters
+gem "kramdown-parser-gfm", "~> 1.1"
+gem "kramdown", "~> 2.3"
+
+# Theme
+gem "minima", "~> 2.5"
 
 # Windows and JRuby compatibility
 platforms :mingw, :x64_mingw, :mswin, :jruby do
@@ -17,10 +21,10 @@ platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo-data"
 end
 
-# Performance-booster for watching directories on Windows
+# Performance booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
-# HTTP parser gem for JRuby
+# Lock http_parser.rb gem to v0.6.x on JRuby builds
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # Development dependencies
