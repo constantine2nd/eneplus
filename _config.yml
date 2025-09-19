@@ -32,10 +32,6 @@ exclude:
   - vendor/ruby/
 
 # Collections
-collections:
-  services:
-    output: true
-    permalink: /:collection/:name/
 
 # Default values
 defaults:
@@ -49,11 +45,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-  - scope:
-      path: ""
-      type: "services"
-    values:
-      layout: "service"
 
 # Site data
 company:
@@ -96,29 +87,29 @@ team:
 # Services
 services_list:
   - name: "Energetski menadžment"
-    icon: "energy"
+    icon: "bolt"
   - name: "Studije i analize"
-    icon: "analysis"
+    icon: "chart-bar"
   - name: "Treninzi i edukacije"
-    icon: "education"
+    icon: "graduation-cap"
   - name: "Energetska sertifikacija"
     icon: "certificate"
   - name: "Projektovanje"
-    icon: "design"
+    icon: "drafting-compass"
   - name: "Web aplikacije i prezentacije"
-    icon: "web"
+    icon: "laptop-code"
   - name: "Priprema i podrška za JPP"
-    icon: "support"
+    icon: "hands-helping"
   - name: "ISO 50001"
-    icon: "iso"
+    icon: "award"
   - name: "Energetski konsalting"
-    icon: "consulting"
+    icon: "user-tie"
   - name: "Energetski pregledi"
-    icon: "inspection"
+    icon: "search"
   - name: "Merenja"
-    icon: "measurement"
+    icon: "ruler"
   - name: "Projekt menadžment"
-    icon: "management"
+    icon: "tasks"
 
 # Sass settings
 sass:
