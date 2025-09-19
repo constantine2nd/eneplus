@@ -8,6 +8,7 @@
   --primary-color: #2c5aa0;
   --secondary-color: #4a90c2;
   --accent-color: #f39c12;
+  --accent-color-dark: #d68910;
   --text-color: #333333;
   --text-light: #666666;
   --bg-color: #ffffff;
@@ -105,7 +106,7 @@ img {
     color: white;
 
     &:hover {
-      background-color: darken(var(--accent-color), 10%);
+      background-color: var(--accent-color-dark);
       transform: translateY(-2px);
     }
   }
