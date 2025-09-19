@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+
+# GitHub Actions
+.github
+
+# Jekyll build output
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+
+# Bundler
+.bundle
+vendor/cache
+vendor/gems
+vendor/ruby
+
+# Node modules (if any)
+node_modules
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Documentation
+README.md
+DEPLOYMENT.md
+
+# Temporary files
+*.tmp
+*.temp

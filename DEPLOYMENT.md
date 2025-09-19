@@ -2,13 +2,13 @@
 
 ## Overview
 
-This document provides step-by-step instructions for deploying the ENEPLUS Jekyll website to GitHub Pages and configuring it for production use.
+This document provides step-by-step instructions for deploying the ENEPLUS Jekyll website to GitHub Pages and configuring it for production use. The deployment uses Docker Jekyll for consistent builds between local development and CI/CD.
 
 ## Prerequisites
 
 - GitHub account
 - Git installed locally
-- Ruby 2.7+ and Bundler (for local development)
+- Docker (for local development and consistent builds)
 
 ## Quick Setup
 
@@ -33,13 +33,78 @@ This document provides step-by-step instructions for deploying the ENEPLUS Jekyl
 
 1. Go to your repository on GitHub
 2. Navigate to **Settings** → **Pages**
-3. Under **Source**, select **Deploy from a branch**
-4. Choose **main** branch and **/ (root)** folder
-5. Click **Save**
+3. Under **Source**, select **GitHub Actions**
+4. The Docker-based workflow (`.github/workflows/jekyll.yml`) will automatically build and deploy your site
 
 The website will be available at: `https://YOUR_USERNAME.github.io/eneplus`
 
-### 3. Custom Domain Setup (Optional)
+## Local Development with Docker
+
+### Using the Development Script
+
+A Docker development script is provided for easy local testing:
+
+```bash
+# Start development server (with live reload)
+./docker-dev.sh serve
+
+# Build the site
+./docker-dev.sh build
+
+# Test build (same as CI/CD)
+./docker-dev.sh test
+
+# Install/update gems
+./docker-dev.sh install
+
+# Clean build files
+./docker-dev.sh clean
+
+# Get help
+./docker-dev.sh help
+```
+
+### Manual Docker Commands
+
+If you prefer manual Docker commands:
+
+```bash
+# Development server
+docker run --rm -v $PWD:/srv/jekyll -v $PWD/vendor/bundle:/usr/local/bundle -p 4000:4000 jekyll/jekyll:3.9 jekyll serve --host 0.0.0.0 --livereload
+
+# Build site
+docker run --rm -v $PWD:/srv/jekyll -v $PWD/vendor/bundle:/usr/local/bundle jekyll/jekyll:3.9 jekyll build --trace
+
+# Install gems
+docker run --rm -v $PWD:/srv/jekyll -v $PWD/vendor/bundle:/usr/local/bundle jekyll/jekyll:3.9 bundle install
+```
+
+The development server will be available at `http://localhost:4000`
+
+## Docker-based CI/CD Pipeline
+
+The website uses a Docker-based GitHub Actions workflow for consistent builds:
+
+### Workflow Features
+
+- **Consistent Environment**: Same Jekyll Docker image (`jekyll/jekyll:3.9`) used locally and in CI/CD
+- **Dependency Caching**: Ruby gems cached in `vendor/bundle` volume
+- **Automatic Deployment**: Builds and deploys on every push to `main` branch
+- **Build Tracing**: `--trace` flag enabled for better debugging
+
+### Workflow Configuration
+
+The workflow is defined in `.github/workflows/jekyll.yml`:
+
+1. **Build Job**: Uses Docker to build the Jekyll site
+2. **Deploy Job**: Deploys the built site to GitHub Pages
+3. **Permissions**: Configured for GitHub Pages deployment
+
+### Manual Workflow Trigger
+
+You can manually trigger the workflow from the GitHub Actions tab if needed.
+
+## Custom Domain Setup (Optional)
 
 If you want to use `www.eneplus.rs`:
 
@@ -174,17 +239,34 @@ Set up monitoring with services like:
 
 1. Keep Jekyll and gems updated:
    ```bash
-   bundle update
+   # Using Docker
+   ./docker-dev.sh update
+   
+   # Or manually
+   docker run --rm -v $PWD:/srv/jekyll -v $PWD/vendor/bundle:/usr/local/bundle jekyll/jekyll:3.9 bundle update
    ```
 
 2. Monitor for security vulnerabilities:
    ```bash
-   bundle audit
+   # Using Docker
+   docker run --rm -v $PWD:/srv/jekyll -v $PWD/vendor/bundle:/usr/local/bundle jekyll/jekyll:3.9 bundle audit
    ```
 
 3. Update content regularly
 4. Check broken links periodically
 5. Review and update contact information
+
+### Docker Maintenance
+
+1. Periodically clean Docker volumes:
+   ```bash
+   ./docker-dev.sh clean --docker
+   ```
+
+2. Update Docker image:
+   ```bash
+   docker pull jekyll/jekyll:3.9
+   ```
 
 ### Backup Strategy
 
@@ -197,10 +279,17 @@ Set up monitoring with services like:
 ### Common Issues
 
 #### Build Failures
-Check GitHub Actions tab for build errors. Common causes:
+Check GitHub Actions tab for build errors. With Docker builds, common causes:
 - Syntax errors in YAML frontmatter
 - Missing dependencies in Gemfile
 - Incorrect liquid template syntax
+- Docker image version mismatch
+- Volume mount permission issues
+
+#### Local Development Issues
+- **Port 4000 in use**: Stop other Jekyll processes or use different port
+- **Docker permission issues**: Ensure Docker is running and accessible
+- **Gem installation fails**: Clear vendor/bundle and reinstall
 
 #### Images Not Loading
 - Check file paths are correct
@@ -236,6 +325,22 @@ Check GitHub Actions tab for build errors. Common causes:
 - [ ] Sitemap is accessible at /sitemap.xml
 - [ ] robots.txt is accessible
 - [ ] PWA features work (offline page, installability)
+- [ ] GitHub Actions workflow completes successfully
+- [ ] Docker build works locally with `./docker-dev.sh test`
+
+## Docker Development Quick Reference
+
+```bash
+# Essential commands
+./docker-dev.sh serve    # Start dev server (http://localhost:4000)
+./docker-dev.sh build    # Build site
+./docker-dev.sh test     # Test build (CI/CD simulation)
+./docker-dev.sh clean    # Clean build files
+
+# Site will be built to _site/ directory
+# Gems cached in vendor/bundle/ directory
+# Docker image: jekyll/jekyll:3.9
+```
 
 ## Support
 
