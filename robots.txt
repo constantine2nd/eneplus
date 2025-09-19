@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin/system files
+Disallow: /_site/
+Disallow: /.sass-cache/
+Disallow: /.jekyll-cache/
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Allow crawling of images
+Allow: /assets/images/
+
+# Sitemap location
+Sitemap: https://constantine2nd.github.io/eneplus/sitemap.xml
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1

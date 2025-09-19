@@ -1,0 +1,111 @@
+{
+  "name": "ENEPLUS - Energetska efikasnost i menadžment",
+  "short_name": "ENEPLUS",
+  "description": "ENEPLUS je konsultantska firma koja pruža usluge iz oblasti energetskog menadžmenta, energetske efikasnosti i projektnog menadžmenta.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c5aa0",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "sr-RS",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/images/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Kontaktiraj ENEPLUS tim",
+      "url": "/kontakt/",
+      "icons": [
+        {
+          "src": "/assets/images/shortcut-contact.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Naše usluge",
+      "short_name": "Usluge",
+      "description": "Pogledaj sve naše usluge",
+      "url": "/nase-usluge/",
+      "icons": [
+        {
+          "src": "/assets/images/shortcut-services.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "O nama",
+      "short_name": "O nama",
+      "description": "Saznaj više o ENEPLUS timu",
+      "url": "/o-nama/",
+      "icons": [
+        {
+          "src": "/assets/images/shortcut-about.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 480
+  }
+}

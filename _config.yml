@@ -1,0 +1,136 @@
+# Site settings
+title: ENEPLUS
+email: office@eneplus.rs
+description: >-
+  ENEPLUS je konsultantska firma koja pruža usluge iz oblasti energetskog menadžmenta,
+  energetske efikasnosti i projektnog menadžmenta.
+baseurl: ""
+url: "https://constantine2nd.github.io/eneplus"
+twitter_username: ""
+github_username: constantine2nd
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /:collection/:name/
+
+# Default values
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+
+# Site data
+company:
+  name: "ENEPLUS"
+  address: "Stevana Doronjskog 38"
+  city: "21460 Vrbas"
+  country: "Srbija"
+  pib: "109366766"
+  registration: "64123637"
+  account: "160-445565-41"
+  bank: "Banca Intesa"
+  phone1: "+381 64 8172033"
+  phone2: "+381 64 8375706"
+  email: "office@eneplus.rs"
+
+# Navigation
+navigation:
+  - name: "Početna"
+    url: "/"
+  - name: "O nama"
+    url: "/o-nama/"
+  - name: "Naše usluge"
+    url: "/nase-usluge/"
+  - name: "Softver"
+    url: "/softver/"
+  - name: "Media"
+    url: "/media/"
+  - name: "Kontakt"
+    url: "/kontakt/"
+
+# Team members
+team:
+  - name: "Željko Zečević"
+    title: "dipl.inž.el.-master"
+    phone: "+381 64 8172033"
+  - name: "Nikola Vujović"
+    title: "dipl.inž.maš.-master"
+    phone: "+381 64 8375706"
+
+# Services
+services_list:
+  - name: "Energetski menadžment"
+    icon: "energy"
+  - name: "Studije i analize"
+    icon: "analysis"
+  - name: "Treninzi i edukacije"
+    icon: "education"
+  - name: "Energetska sertifikacija"
+    icon: "certificate"
+  - name: "Projektovanje"
+    icon: "design"
+  - name: "Web aplikacije i prezentacije"
+    icon: "web"
+  - name: "Priprema i podrška za JPP"
+    icon: "support"
+  - name: "ISO 50001"
+    icon: "iso"
+  - name: "Energetski konsalting"
+    icon: "consulting"
+  - name: "Energetski pregledi"
+    icon: "inspection"
+  - name: "Merenja"
+    icon: "measurement"
+  - name: "Projekt menadžment"
+    icon: "management"
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Pagination
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Timezone
+timezone: Europe/Belgrade
+
+# Language
+lang: sr-RS

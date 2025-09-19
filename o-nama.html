@@ -1,0 +1,385 @@
+---
+layout: page
+title: "O nama"
+subtitle: "Ekspertski tim za energetsku efikasnost"
+permalink: /o-nama/
+---
+
+<div class="about-intro">
+    <div class="intro-content">
+        <h2>ENEPLUS - Vaš partner za energetsku efikasnost</h2>
+        <p class="lead">ENEPLUS je konsultantska firma koja pruža usluge iz oblasti energetskog menadžmenta, energetske efikasnosti i projektnog menadžmenta. Naš ekspertski tim stoji Vam na raspolaganju prilikom analize i odabira najoptimalnijih rešenja koji će povećati energetsku efikasnost Vašeg sistema uz smanjenje troškova.</p>
+
+        <p>ENEPLUS razvija strategije i implementira rešenja koja omogućuju optimizaciju procesa, smanjenja troškova i održivi razvoj.</p>
+    </div>
+</div>
+
+<div class="company-values">
+    <h2>Naše vrednosti</h2>
+    <div class="values-grid">
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Inovacija</h3>
+            <p>Koristimo najnovije tehnologije i pristupe za rešavanje energetskih izazova naših klijenata.</p>
+        </div>
+
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Pouzdanost</h3>
+            <p>Gradimo dugoročne partnerske odnose zasnovane na poverenju i profesionalnosti.</p>
+        </div>
+
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Efikasnost</h3>
+            <p>Fokusiramo se na rezultate koji donose stvarnu vrednost našim klijentima.</p>
+        </div>
+
+        <div class="value-item">
+            <div class="value-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Održivost</h3>
+            <p>Promovišemo rešenja koja štite životnu sredinu i omogućavaju održivi razvoj.</p>
+        </div>
+    </div>
+</div>
+
+<div class="our-approach">
+    <h2>Naš pristup</h2>
+    <div class="approach-content">
+        <div class="approach-text">
+            <p>Naš pristup se zasniva na detaljnoj analizi postojećeg stanja, identifikovanju potencijala za poboljšanje i implementaciji rešenja koja donose merljive rezultate.</p>
+
+            <h3>Proces rada</h3>
+            <ol>
+                <li><strong>Analiza:</strong> Detaljno proučavanje postojećeg sistema i identifikovanje problema</li>
+                <li><strong>Planiranje:</strong> Razvoj strategije i plana implementacije rešenja</li>
+                <li><strong>Implementacija:</strong> Realizacija predloženih mera i rešenja</li>
+                <li><strong>Monitoring:</strong> Praćenje rezultata i kontinualno poboljšanje</li>
+            </ol>
+        </div>
+        <div class="approach-visual">
+            <div class="process-cycle">
+                <div class="cycle-step" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Analiza</span>
+                </div>
+                <div class="cycle-step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Planiranje</span>
+                </div>
+                <div class="cycle-step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Implementacija</span>
+                </div>
+                <div class="cycle-step" data-step="4">
+                    <span class="step-number">4</span>
+                    <span class="step-label">Monitoring</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="team-expertise">
+    <h2>Ekspertiza tima</h2>
+    <div class="expertise-areas">
+        <div class="expertise-item">
+            <h3>Energetski menadžment</h3>
+            <p>Višegodišnje iskustvo u implementaciji sistema energetskog menadžmenta prema ISO 50001 standardu.</p>
+        </div>
+
+        <div class="expertise-item">
+            <h3>Energetska efikasnost</h3>
+            <p>Specijalizovani za identifikovanje i implementaciju mera energetske efikasnosti u industrijskim i komercijalnim objektima.</p>
+        </div>
+
+        <div class="expertise-item">
+            <h3>Obnovljivi izvori energije</h3>
+            <p>Ekspertiza u projektovanju i implementaciji sistema koji koriste obnovljive izvore energije.</p>
+        </div>
+
+        <div class="expertise-item">
+            <h3>Projektni menadžment</h3>
+            <p>Profesionalno upravljanje projektima od početne ideje do finalne implementacije.</p>
+        </div>
+    </div>
+</div>
+
+<div class="team-section">
+    <h2>Naš tim</h2>
+    <p class="team-intro">Naš ekspertski tim sačinjavaju licencirani inženjeri sa višegodišnjim iskustvom u oblasti energetskog menadžmenta, realizaciji i pripremi projekata energetske efikasnosti i primene obnovljivih izvora energije.</p>
+
+    <div class="team-members">
+        {% for member in site.team %}
+        <div class="team-member-card">
+            <div class="member-photo">
+                <img src="{{ '/assets/images/team/' | append: member.name | slugify | append: '.jpg' | relative_url }}"
+                     alt="{{ member.name }}"
+                     onerror="this.src='{{ '/assets/images/placeholder-person.jpg' | relative_url }}'">
+            </div>
+            <div class="member-details">
+                <h3>{{ member.name }}</h3>
+                <p class="member-title">{{ member.title }}</p>
+                <p class="member-contact">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:{{ member.phone }}">{{ member.phone }}</a>
+                </p>
+                <p class="member-email">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="why-choose-us">
+    <h2>Zašto odabrati ENEPLUS?</h2>
+    <div class="benefits-grid">
+        <div class="benefit-item">
+            <div class="benefit-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3>Licencirani inženjeri</h3>
+            <p>Naš tim čine iskusni i licencirani inženjeri sa dokazanim rezultatima.</p>
+        </div>
+
+        <div class="benefit-item">
+            <div class="benefit-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Sveobuhvatan pristup</h3>
+            <p>Pružamo kompletne usluge od analize do implementacije i praćenja rezultata.</p>
+        </div>
+
+        <div class="benefit-item">
+            <div class="benefit-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3>Brza realizacija</h3>
+            <p>Efikasno upravljanje projektima omogućava brzу implementaciju rešenja.</p>
+        </div>
+
+        <div class="benefit-item">
+            <div class="benefit-icon">
+                <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <h3>Uštede troškova</h3>
+            <p>Naša rešenja donose merljive uštede u energetskim troškovima.</p>
+        </div>
+
+        <div class="benefit-item">
+            <div class="benefit-icon">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Standardizovani procesi</h3>
+            <p>Radimo u skladu sa međunarodno priznatim standardima poput ISO 50001.</p>
+        </div>
+
+        <div class="benefit-item">
+            <div class="benefit-icon">
+                <i class="fas fa-support"></i>
+            </div>
+            <h3>Kontinuirana podrška</h3>
+            <p>Pružamo dugotrajnu podršku i praćenje implementiranih rešenja.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.about-intro {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.intro-content .lead {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.company-values,
+.our-approach,
+.team-expertise,
+.why-choose-us {
+    margin-bottom: 4rem;
+}
+
+.values-grid,
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item,
+.benefit-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.value-item:hover,
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.value-icon,
+.benefit-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.approach-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.process-cycle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.cycle-step {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.cycle-step:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.step-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.step-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.expertise-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.expertise-item {
+    padding: 2rem;
+    background: white;
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.expertise-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.team-member-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.member-photo {
+    height: 250px;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-details {
+    padding: 2rem;
+    text-align: center;
+}
+
+.member-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.member-title {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.member-contact,
+.member-email {
+    margin-bottom: 0.5rem;
+}
+
+.member-contact i,
+.member-email i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .approach-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .values-grid,
+    .benefits-grid,
+    .expertise-areas,
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-content .lead {
+        font-size: 1.1rem;
+    }
+}
+</style>

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'sr-RS' }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <title>
+            {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+        </title>
+        <meta
+            name="description"
+            content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ page.url | absolute_url }}" />
+        <meta
+            property="og:title"
+            content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}"
+        />
+        <meta
+            property="og:description"
+            content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="{{ page.url | absolute_url }}" />
+        <meta
+            property="twitter:title"
+            content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}"
+        />
+        <meta
+            property="twitter:description"
+            content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="{{ '/assets/images/favicon.ico' | relative_url }}"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{{ '/assets/images/favicon-32x32.png' | relative_url }}"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="{{ '/assets/images/favicon-16x16.png' | relative_url }}"
+        />
+
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="{{ '/manifest.json' | relative_url }}" />
+
+        <!-- PWA Meta Tags -->
+        <meta name="theme-color" content="#2c5aa0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="ENEPLUS" />
+        <meta
+            name="msapplication-TileImage"
+            content="{{ '/assets/images/icon-144.png' | relative_url }}"
+        />
+        <meta name="msapplication-TileColor" content="#2c5aa0" />
+
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ '/assets/css/main.css' | relative_url }}"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Font Awesome for icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+
+        {% seo %} {% feed_meta %}
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="site-header">
+            <div class="container">
+                <nav class="navbar">
+                    <div class="navbar-brand">
+                        <a href="{{ '/' | relative_url }}" class="logo">
+                            <h1>{{ site.title }}</h1>
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu toggle -->
+                    <button class="navbar-toggle" id="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <!-- Navigation menu -->
+                    <div class="navbar-menu" id="navbar-menu">
+                        <ul class="navbar-nav">
+                            {% for item in site.navigation %}
+                            <li class="nav-item">
+                                <a
+                                    href="{{ item.url | relative_url }}"
+                                    class="nav-link {% if page.url == item.url %}active{% endif %}"
+                                >
+                                    {{ item.name }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="site-main">{{ content }}</main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>{{ site.company.name }}</h3>
+                        <p>{{ site.description }}</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Kontakt informacije</h4>
+                        <div class="contact-info">
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> {{
+                                site.company.address }}
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> {{
+                                site.company.city }}, {{ site.company.country }}
+                            </p>
+                            <p>
+                                <i class="fas fa-phone"></i> {{
+                                site.company.phone1 }}
+                            </p>
+                            <p>
+                                <i class="fas fa-phone"></i> {{
+                                site.company.phone2 }}
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:{{ site.company.email }}"
+                                    >{{ site.company.email }}</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Brzi linkovi</h4>
+                        <ul class="footer-links">
+                            {% for item in site.navigation %}
+                            <li>
+                                <a href="{{ item.url | relative_url }}"
+                                    >{{ item.name }}</a
+                                >
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Informacije o kompaniji</h4>
+                        <div class="company-info">
+                            <p><strong>PIB:</strong> {{ site.company.pib }}</p>
+                            <p>
+                                <strong>Matični broj:</strong> {{
+                                site.company.registration }}
+                            </p>
+                            <p>
+                                <strong>Račun:</strong> {{ site.company.account
+                                }}
+                            </p>
+                            <p>
+                                <strong>Banka:</strong> {{ site.company.bank }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>
+                            &copy; {{ 'now' | date: '%Y' }} {{ site.company.name
+                            }}. Sva prava zadržana.
+                        </p>
+                    </div>
+                    <div class="footer-social">
+                        <!-- Add social media links here if needed -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+        <!-- Mobile menu script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const mobileToggle =
+                    document.getElementById("mobile-menu-toggle");
+                const navbarMenu = document.getElementById("navbar-menu");
+
+                if (mobileToggle && navbarMenu) {
+                    mobileToggle.addEventListener("click", function () {
+                        navbarMenu.classList.toggle("active");
+                        this.classList.toggle("active");
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

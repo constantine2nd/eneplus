@@ -1,0 +1,769 @@
+---
+layout: page
+title: "Kontakt"
+subtitle: "Stupite u kontakt sa našim ekspertskim timom"
+permalink: /kontakt/
+---
+
+<div class="contact-intro">
+    <div class="intro-content">
+        <p class="lead">Spremni smo da odgovorimo na vaša pitanja i pomognemo vam da pronađete najbolje rešenje za vaše energetske potrebe. Kontaktirajte nas danas za besplatnu konsultaciju.</p>
+    </div>
+</div>
+
+<div class="contact-methods">
+    <div class="contact-grid">
+        <div class="contact-method">
+            <div class="method-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+            <h3>Pozovite nas</h3>
+            <p>Direktan razgovor sa našim ekspertima</p>
+            <div class="contact-info">
+                <a href="tel:{{ site.company.phone1 }}" class="contact-link">{{ site.company.phone1 }}</a>
+                <a href="tel:{{ site.company.phone2 }}" class="contact-link">{{ site.company.phone2 }}</a>
+            </div>
+        </div>
+
+        <div class="contact-method">
+            <div class="method-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Pošaljite email</h3>
+            <p>Detaljno opišite vaš zahtev</p>
+            <div class="contact-info">
+                <a href="mailto:{{ site.company.email }}" class="contact-link">{{ site.company.email }}</a>
+            </div>
+        </div>
+
+        <div class="contact-method">
+            <div class="method-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Posetite nas</h3>
+            <p>Lični razgovor u našoj kancelariji</p>
+            <div class="contact-info">
+                <span class="contact-text">{{ site.company.address }}</span>
+                <span class="contact-text">{{ site.company.city }}</span>
+                <span class="contact-text">{{ site.company.country }}</span>
+            </div>
+        </div>
+
+        <div class="contact-method">
+            <div class="method-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3>Radno vreme</h3>
+            <p>Kada smo dostupni za kontakt</p>
+            <div class="contact-info">
+                <span class="contact-text">Ponedelj - Petak: 08:00 - 17:00</span>
+                <span class="contact-text">Subota: Po dogovoru</span>
+                <span class="contact-text">Nedelja: Zatvoreno</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-form-section">
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Pošaljite nam poruku</h2>
+            <p>Popunite formu ispod i kontaktiraćemo vas u najkraćem mogućem roku</p>
+        </div>
+
+        <form id="contact-form" class="contact-form" action="#" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">Ime *</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Prezime *</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email adresa *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Kompanija/Organizacija</label>
+                <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-group">
+                <label for="service">Interesuje vas *</label>
+                <select id="service" name="service" required>
+                    <option value="">Izaberite uslugu...</option>
+                    {% for service in site.services_list %}
+                    <option value="{{ service.name }}">{{ service.name }}</option>
+                    {% endfor %}
+                    <option value="Opšte informacije">Opšte informacije</option>
+                    <option value="Ostalo">Ostalo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Tema poruke *</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Vaša poruka *</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Opišite detaljno vaš zahtev ili pitanje..."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="newsletter" value="yes">
+                    <span class="checkmark"></span>
+                    Želim da primam newsletter sa najnovijim informacijama o energetskoj efikasnosti
+                </label>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="privacy" value="yes" required>
+                    <span class="checkmark"></span>
+                    Prihvatam <a href="#" target="_blank">uslove korišćenja</a> i <a href="#" target="_blank">politiku privatnosti</a> *
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-large">
+                    <i class="fas fa-paper-plane"></i>
+                    Pošalji poruku
+                </button>
+                <button type="reset" class="btn btn-outline">
+                    Obriši formu
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="contact-sidebar">
+        <div class="contact-card">
+            <h3>{{ site.company.name }}</h3>
+
+            <div class="company-info">
+                <div class="info-item">
+                    <i class="fas fa-building"></i>
+                    <div class="info-content">
+                        <strong>Adresa:</strong>
+                        <span>{{ site.company.address }}</span>
+                        <span>{{ site.company.city }}, {{ site.company.country }}</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="info-content">
+                        <strong>Telefoni:</strong>
+                        <a href="tel:{{ site.company.phone1 }}">{{ site.company.phone1 }}</a>
+                        <a href="tel:{{ site.company.phone2 }}">{{ site.company.phone2 }}</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <strong>Email:</strong>
+                        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-legal">
+                <h4>Podaci o kompaniji</h4>
+                <p><strong>PIB:</strong> {{ site.company.pib }}</p>
+                <p><strong>Matični broj:</strong> {{ site.company.registration }}</p>
+                <p><strong>Račun:</strong> {{ site.company.account }}</p>
+                <p><strong>Banka:</strong> {{ site.company.bank }}</p>
+            </div>
+        </div>
+
+        <div class="quick-contact">
+            <h4>Brz kontakt</h4>
+            <p>Za hitne zahteve možete direktno kontaktirati naš tim:</p>
+
+            {% for member in site.team %}
+            <div class="team-contact">
+                <h5>{{ member.name }}</h5>
+                <p class="member-title">{{ member.title }}</p>
+                <a href="tel:{{ member.phone }}" class="contact-link">
+                    <i class="fas fa-phone"></i> {{ member.phone }}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="map-section">
+    <div class="map-container">
+        <h2>Lokacija</h2>
+        <div class="map-embed">
+            <!-- Placeholder for map - you can integrate Google Maps or OpenStreetMap -->
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <p>{{ site.company.address }}, {{ site.company.city }}</p>
+                <a href="https://maps.google.com/?q={{ site.company.address | url_encode }}, {{ site.company.city | url_encode }}"
+                   target="_blank"
+                   class="btn btn-primary">
+                    Otvori u Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.contact-intro {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.intro-content .lead {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-methods {
+    margin-bottom: 4rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contact-method {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.method-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-method p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--secondary-color);
+}
+
+.contact-text {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.contact-form-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.form-container {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: var(--text-light);
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-label a {
+    color: var(--primary-color);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-card,
+.quick-contact {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.contact-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.company-info {
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    min-width: 20px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.info-content strong {
+    color: var(--text-color);
+}
+
+.info-content span,
+.info-content a {
+    color: var(--text-light);
+}
+
+.info-content a:hover {
+    color: var(--primary-color);
+}
+
+.company-legal {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.company-legal h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.company-legal p {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.quick-contact h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.quick-contact p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.team-contact {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.team-contact:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.team-contact h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.team-contact .member-title {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.map-section {
+    background: var(--bg-light);
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.map-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.map-placeholder {
+    background: white;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.map-placeholder p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-container {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .contact-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-method {
+        padding: 1.5rem;
+    }
+
+    .method-icon {
+        font-size: 2.5rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .contact-card,
+    .quick-contact {
+        padding: 1.5rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const formObject = {};
+
+            // Convert FormData to object
+            for (let [key, value] of formData.entries()) {
+                if (formObject[key]) {
+                    if (Array.isArray(formObject[key])) {
+                        formObject[key].push(value);
+                    } else {
+                        formObject[key] = [formObject[key], value];
+                    }
+                } else {
+                    formObject[key] = value;
+                }
+            }
+
+            // Validate form
+            if (validateContactForm(formObject)) {
+                submitContactForm(formObject, this);
+            }
+        });
+    }
+});
+
+function validateContactForm(data) {
+    const errors = [];
+
+    if (!data.first_name || data.first_name.trim().length < 2) {
+        errors.push('Ime mora imati najmanje 2 karaktera.');
+    }
+
+    if (!data.last_name || data.last_name.trim().length < 2) {
+        errors.push('Prezime mora imati najmanje 2 karaktera.');
+    }
+
+    if (!data.email || !isValidEmail(data.email)) {
+        errors.push('Molimo unesite validnu email adresu.');
+    }
+
+    if (!data.service) {
+        errors.push('Molimo izaberite uslugu koja vas interesuje.');
+    }
+
+    if (!data.subject || data.subject.trim().length < 3) {
+        errors.push('Tema poruke mora imati najmanje 3 karaktera.');
+    }
+
+    if (!data.message || data.message.trim().length < 10) {
+        errors.push('Poruka mora imati najmanje 10 karaktera.');
+    }
+
+    if (!data.privacy) {
+        errors.push('Morate prihvatiti uslove korišćenja i politiku privatnosti.');
+    }
+
+    if (errors.length > 0) {
+        showFormMessage(errors.join('\n'), 'error');
+        return false;
+    }
+
+    return true;
+}
+
+function submitContactForm(data, form) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
+
+    // Show loading state
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Šalje se...';
+    submitButton.disabled = true;
+
+    // Simulate form submission (replace with actual form handling)
+    setTimeout(() => {
+        // Success
+        showFormMessage('Hvala! Vaša poruka je uspešno poslata. Kontaktiraćemo vas u najkraćem mogućem roku.', 'success');
+
+        // Reset form
+        form.reset();
+
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+
+        // Scroll to top of form
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    }, 2000);
+}
+
+function showFormMessage(message, type) {
+    // Remove existing messages
+    const existingMessages = document.querySelectorAll('.form-message');
+    existingMessages.forEach(msg => msg.remove());
+
+    // Create message element
+    const messageElement = document.createElement('div');
+    messageElement.className = `form-message form-message-${type}`;
+    messageElement.innerHTML = `
+        <div class="message-content">
+            <span class="message-text">${message.replace(/\n/g, '<br>')}</span>
+            <button class="message-close" onclick="this.parentElement.parentElement.remove()">&times;</button>
+        </div>
+    `;
+
+    // Add styles
+    const styles = `
+        .form-message {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 2px solid;
+        }
+        .form-message-success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        .form-message-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f1aeb5;
+        }
+        .message-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .message-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            opacity: 0.7;
+            padding: 0;
+            line-height: 1;
+        }
+        .message-close:hover {
+            opacity: 1;
+        }
+    `;
+
+    // Add styles to head if not already present
+    if (!document.querySelector('#form-message-styles')) {
+        const styleSheet = document.createElement('style');
+        styleSheet.id = 'form-message-styles';
+        styleSheet.textContent = styles;
+        document.head.appendChild(styleSheet);
+    }
+
+    // Insert message at the top of form
+    const formHeader = document.querySelector('.form-header');
+    if (formHeader && formHeader.parentNode) {
+        formHeader.parentNode.insertBefore(messageElement, formHeader.nextSibling);
+    }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+</script>

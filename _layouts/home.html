@@ -1,0 +1,204 @@
+---
+layout: default
+---
+
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">{{ site.title }}</h1>
+                <h2 class="hero-subtitle">VAM POMAŽE DA BUDETE EFIKASNIJI</h2>
+                <p class="hero-description">{{ site.description }}</p>
+                <div class="hero-actions">
+                    <a href="{{ '/nase-usluge/' | relative_url }}" class="btn btn-primary">Naše usluge</a>
+                    <a href="{{ '/kontakt/' | relative_url }}" class="btn btn-secondary">Kontaktiraj nas</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ '/assets/images/hero-image.jpg' | relative_url }}" alt="ENEPLUS - Energetska efikasnost" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>NAŠE USLUGE</h2>
+            <p>Pružamo sveobuhvatne usluge u oblasti energetskog menadžmenta i energetske efikasnosti</p>
+        </div>
+
+        <div class="services-grid">
+            {% for service in site.services_list %}
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-{{ service.icon }}"></i>
+                </div>
+                <h3>{{ service.name }}</h3>
+                <p>Profesionalne usluge {{ service.name | downcase }} za povećanje energetske efikasnosti vašeg sistema.</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="services-cta">
+            <a href="{{ '/nase-usluge/' | relative_url }}" class="btn btn-outline">Pogledaj sve usluge</a>
+        </div>
+    </div>
+</section>
+
+<section class="iso-section">
+    <div class="container">
+        <div class="iso-content">
+            <div class="iso-cycle">
+                <div class="cycle-item">
+                    <div class="cycle-step">PLAN</div>
+                </div>
+                <div class="cycle-item">
+                    <div class="cycle-step">DO</div>
+                </div>
+                <div class="cycle-item">
+                    <div class="cycle-step">CHECK</div>
+                </div>
+                <div class="cycle-item">
+                    <div class="cycle-step">ACT</div>
+                </div>
+            </div>
+            <div class="iso-info">
+                <h2>ISO 50001</h2>
+                <p>Implementiramo sistem energetskog menadžmenta prema ISO 50001 standardu koji omogućava kontinualno poboljšanje energetskih performansi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="value-proposition">
+    <div class="container">
+        <div class="value-content">
+            <h2>MI ŠTEDIMO VAŠE VREME I NOVAC</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Štednja vremena</h3>
+                    <p>Naš ekspertski tim omogućava brzu implementaciju rešenja</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Smanjenje troškova</h3>
+                    <p>Optimizujemo procese za maksimalnu energetsku efikasnost</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Povećanje efikasnosti</h3>
+                    <p>Strategije koje omogućavaju održivi razvoj i optimizaciju</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>O NAMA</h2>
+                <p>ENEPLUS je konsultantska firma koja pruža usluge iz oblasti energetskog menadžmenta, energetske efikasnosti i projektnog menadžmenta. Naš ekspertski tim stoji Vam na raspolaganju prilikom analize i odabira najoptimalnijih rešenja koji će povećati energetsku efikasnost Vašeg sistema uz smanjenje troškova.</p>
+                <p>ENEPLUS razvija strategije i implementira rešenja koja omogućuju optimizaciju procesa, smanjenja troškova i održivi razvoj.</p>
+                <a href="{{ '/o-nama/' | relative_url }}" class="btn btn-primary">Saznaj više</a>
+            </div>
+            <div class="about-image">
+                <img src="{{ '/assets/images/about-image.jpg' | relative_url }}" alt="O nama - ENEPLUS tim" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>EKSPERTSKI TIM</h2>
+            <p>Naš ekspertski tim sačinjavaju licencirani inženjeri sa višegodišnjim iskustvom u oblasti energetskog menadžmenta, realizaciji i pripremi projekata energetske efikasnosti i primene obnovljivih izvora energije.</p>
+        </div>
+
+        <div class="team-grid">
+            {% for member in site.team %}
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="{{ '/assets/images/team/' | append: member.name | slugify | append: '.jpg' | relative_url }}" alt="{{ member.name }}" />
+                </div>
+                <div class="member-info">
+                    <h3>{{ member.name }}</h3>
+                    <p class="member-title">{{ member.title }}</p>
+                    <p class="member-phone">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:{{ member.phone }}">{{ member.phone }}</a>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Gde se nalazimo?</h2>
+                <div class="company-details">
+                    <h3>{{ site.company.name }}</h3>
+                    <p>{{ site.company.address }}</p>
+                    <p>{{ site.company.city }}</p>
+                    <p>{{ site.company.country }}</p>
+
+                    <div class="company-legal">
+                        <p><strong>PIB:</strong> {{ site.company.pib }}</p>
+                        <p><strong>Matični broj:</strong> {{ site.company.registration }}</p>
+                        <p><strong>Račun:</strong> {{ site.company.account }}</p>
+                        <p><strong>Banka:</strong> {{ site.company.bank }}</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <p><strong>e-mail:</strong> <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></p>
+                        <p><strong>tel:</strong> <a href="tel:{{ site.company.phone1 }}">{{ site.company.phone1 }}</a></p>
+                        <p><strong>tel:</strong> <a href="tel:{{ site.company.phone2 }}">{{ site.company.phone2 }}</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Pošaljite nam poruku</h3>
+                <form id="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ime i prezime</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Tema</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Poruka</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Pošalji</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ content }}

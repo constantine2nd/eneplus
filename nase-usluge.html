@@ -1,0 +1,530 @@
+---
+layout: page
+title: "Naše usluge"
+subtitle: "Sveobuhvatne usluge energetskog menadžmenta"
+permalink: /nase-usluge/
+---
+
+<div class="services-intro">
+    <div class="intro-content">
+        <p class="lead">ENEPLUS pruža širok spektar usluga u oblasti energetskog menadžmenta, energetske efikasnosti i projektnog menadžmenta. Naš ekspertski tim koristi najnovije tehnologije i pristupe za rešavanje energetskih izazova naših klijenata.</p>
+    </div>
+</div>
+
+<div class="services-overview">
+    <div class="services-grid">
+        {% for service in site.services_list %}
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-{{ service.icon }}"></i>
+            </div>
+            <h3>{{ service.name }}</h3>
+            <p>Profesionalne usluge {{ service.name | downcase }} za povećanje energetske efikasnosti vašeg sistema.</p>
+            <a href="#{{ service.name | slugify }}" class="service-link">Saznaj više</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="detailed-services">
+    <div class="service-detail" id="energetski-menadžment">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="service-title">
+                <h2>Energetski menadžment</h2>
+                <p class="service-subtitle">Sistemski pristup upravljanju energijom</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Energetski menadžment predstavlja sistemski pristup planiranju, kontroli i optimizaciji korišćenja energije u organizaciji. Naš tim pomaže kompanijama da implementiraju efikasne sisteme upravljanja energijom koji rezultuju značajnim uštedama.</p>
+
+                <h3>Što obuhvata naša usluga:</h3>
+                <ul>
+                    <li>Analiza postojećeg stanja potrošnje energije</li>
+                    <li>Razvoj energetske politike i ciljeva</li>
+                    <li>Implementacija sistema za praćenje i kontrolu</li>
+                    <li>Obuka osoblja za energetski menadžment</li>
+                    <li>Kontinuirano poboljšanje performansi</li>
+                </ul>
+            </div>
+            <div class="service-benefits">
+                <h3>Prednosti:</h3>
+                <ul>
+                    <li>Smanjenje troškova energije do 30%</li>
+                    <li>Poboljšanje operativne efikasnosti</li>
+                    <li>Smanjenje ugljenog otiska</li>
+                    <li>Usklađenost sa regulativama</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-detail" id="studije-i-analize">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="service-title">
+                <h2>Studije i analize</h2>
+                <p class="service-subtitle">Detaljne analize energetskih sistema</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Pružamo detaljne studije i analize energetskih sistema koji omogućavaju identifikovanje potencijala za poboljšanje energetske efikasnosti i smanjenje troškova.</p>
+
+                <h3>Vrste studija koje radimo:</h3>
+                <ul>
+                    <li>Energetske analize postojećih objekata</li>
+                    <li>Studije opravdanosti investicija</li>
+                    <li>Analize rentabilnosti energetskih projekata</li>
+                    <li>Benchmarking energetskih performansi</li>
+                    <li>Analize životnog ciklusa</li>
+                </ul>
+            </div>
+            <div class="service-benefits">
+                <h3>Rezultati:</h3>
+                <ul>
+                    <li>Jasna slika trenutnog stanja</li>
+                    <li>Identifikacija problema i potencijala</li>
+                    <li>Prioritizacija investicija</li>
+                    <li>Osnova za donošenje odluka</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-detail" id="treninzi-i-edukacije">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="service-title">
+                <h2>Treninzi i edukacije</h2>
+                <p class="service-subtitle">Izgradnja kapaciteta za energetsku efikasnost</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Organizujemo treninze i edukacije za različite ciljne grupe kako bi se povećala svest o značaju energetske efikasnosti i izgradili potrebni kapaciteti.</p>
+
+                <h3>Programi edukacije:</h3>
+                <ul>
+                    <li>Osnove energetskog menadžmenta</li>
+                    <li>ISO 50001 standard</li>
+                    <li>Energetska efikasnost u zgradarstvu</li>
+                    <li>Obnovljivi izvori energije</li>
+                    <li>Energetski audit i sertifikacija</li>
+                </ul>
+            </div>
+            <div class="service-benefits">
+                <h3>Benefiti edukacije:</h3>
+                <ul>
+                    <li>Povećanje svesti o energetskoj efikasnosti</li>
+                    <li>Razvoj veština za energetski menadžment</li>
+                    <li>Mogućnost samostalnog upravljanja</li>
+                    <li>Sertifikovanje učesnika</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-detail" id="energetska-sertifikacija">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <div class="service-title">
+                <h2>Energetska sertifikacija</h2>
+                <p class="service-subtitle">Ocena i sertifikacija energetskih performansi</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Pružamo usluge energetske sertifikacije zgrada i sistema u skladu sa važećim propisima i standardima.</p>
+
+                <h3>Vrste sertifikacije:</h3>
+                <ul>
+                    <li>Energetski pasoš zgrade</li>
+                    <li>Sertifikacija prema LEED standardu</li>
+                    <li>BREEAM sertifikacija</li>
+                    <li>Energetska sertifikacija sistema</li>
+                    <li>Verifikacija energetskih ušteda</li>
+                </ul>
+            </div>
+            <div class="service-benefits">
+                <h3>Značaj sertifikacije:</h3>
+                <ul>
+                    <li>Usklađenost sa zakonskim zahtevima</li>
+                    <li>Povećanje vrednosti nekretnine</li>
+                    <li>Poboljšanje tržišne pozicije</li>
+                    <li>Transparentnost performansi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-detail" id="projektovanje">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-drafting-compass"></i>
+            </div>
+            <div class="service-title">
+                <h2>Projektovanje</h2>
+                <p class="service-subtitle">Projektovanje energetski efikasnih sistema</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Projektujemo energetski efikasne sisteme i rešenja koja omogućavaju optimalno korišćenje energije uz poštovanje svih tehničkih i ekonomskih ograničenja.</p>
+
+                <h3>Oblasti projektovanja:</h3>
+                <ul>
+                    <li>Sistemi grejanja, ventilacije i klimatizacije</li>
+                    <li>Sistemi osvetljenja</li>
+                    <li>Termoenergetski sistemi</li>
+                    <li>Sistemi obnovljivih izvora energije</li>
+                    <li>Automatizacija i kontrola</li>
+                </ul>
+            </div>
+            <div class="service-benefits">
+                <h3>Rezultati projektovanja:</h3>
+                <ul>
+                    <li>Optimalne energetske performanse</li>
+                    <li>Smanjenje investicionih troškova</li>
+                    <li>Povećanje komfora korisnika</li>
+                    <li>Dugoročna održivost</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-detail" id="web-aplikacije-i-prezentacije">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="service-title">
+                <h2>Web aplikacije i prezentacije</h2>
+                <p class="service-subtitle">Digitalna rešenja za energetski menadžment</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Razvijamo web aplikacije i digitalne prezentacije koje omogućavaju efikasno upravljanje energetskim podacima i komunikaciju rezultata.</p>
+
+                <h3>Naša digitalna rešenja:</h3>
+                <ul>
+                    <li>Sistemi za monitoring energije</li>
+                    <li>Dashboard aplikacije</li>
+                    <li>Mobilne aplikacije</li>
+                    <li>Interaktivne prezentacije</li>
+                    <li>Sistemi za izveštavanje</li>
+                </ul>
+            </div>
+            <div class="service-benefits">
+                <h3>Prednosti digitalnih rešenja:</h3>
+                <ul>
+                    <li>Real-time monitoring</li>
+                    <li>Automatizovano izveštavanje</li>
+                    <li>Bolje donošenje odluka</li>
+                    <li>Povećana transparentnost</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-detail" id="iso-50001">
+        <div class="service-header">
+            <div class="service-icon-large">
+                <i class="fas fa-award"></i>
+            </div>
+            <div class="service-title">
+                <h2>ISO 50001</h2>
+                <p class="service-subtitle">Implementacija sistema energetskog menadžmenta</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <p>Pomažemo organizacijama da implementiraju sistem energetskog menadžmenta prema ISO 50001 standardu koji omogućava kontinualno poboljšanje energetskih performansi.</p>
+
+                <h3>PDCA ciklus:</h3>
+                <div class="pdca-cycle">
+                    <div class="pdca-item">
+                        <div class="pdca-icon">PLAN</div>
+                        <p>Planiranje energetskog menadžmenta</p>
+                    </div>
+                    <div class="pdca-item">
+                        <div class="pdca-icon">DO</div>
+                        <p>Implementacija planova</p>
+                    </div>
+                    <div class="pdca-item">
+                        <div class="pdca-icon">CHECK</div>
+                        <p>Praćenje i merenje</p>
+                    </div>
+                    <div class="pdca-item">
+                        <div class="pdca-icon">ACT</div>
+                        <p>Poboljšanje sistema</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-benefits">
+                <h3>Koristi ISO 50001:</h3>
+                <ul>
+                    <li>Kontinualno poboljšanje</li>
+                    <li>Smanjenje troškova</li>
+                    <li>Poboljšanje reputacije</li>
+                    <li>Međunarodno priznanje</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="service-cta">
+    <div class="cta-content">
+        <h2>Potrebna vam je naša stručna pomoć?</h2>
+        <p>Kontaktirajte nas za besplatnu konsultaciju i saznajte kako možemo pomoći vašoj organizaciji da postane energetski efikasnija.</p>
+        <div class="cta-actions">
+            <a href="{{ '/kontakt/' | relative_url }}" class="btn btn-primary">Kontaktiraj nas</a>
+            <a href="tel:{{ site.company.phone1 }}" class="btn btn-secondary">
+                <i class="fas fa-phone"></i> {{ site.company.phone1 }}
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+.services-intro {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.intro-content .lead {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-overview {
+    margin-bottom: 5rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.service-card .service-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.service-link:hover {
+    color: var(--secondary-color);
+}
+
+.detailed-services {
+    margin-bottom: 4rem;
+}
+
+.service-detail {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.service-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.service-icon-large {
+    font-size: 4rem;
+    opacity: 0.9;
+}
+
+.service-title h2 {
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+.service-subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.service-content {
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.service-description h3,
+.service-benefits h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-description ul,
+.service-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-description li,
+.service-benefits li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-description li::before,
+.service-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.service-benefits {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    height: fit-content;
+}
+
+.pdca-cycle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.pdca-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary-color);
+}
+
+.pdca-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.service-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-actions .btn {
+    min-width: 200px;
+}
+
+.cta-actions .btn i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .service-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .pdca-cycle {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>

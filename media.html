@@ -1,0 +1,372 @@
+---
+layout: page
+title: "Media"
+subtitle: "Resursi i medijski sadržaj"
+permalink: /media/
+---
+
+<div class="media-intro">
+    <div class="intro-content">
+        <p class="lead">Ovde možete pronaći korisne resurse, publikacije, prezentacije i medijske sadržaje vezane za energetsku efikasnost i naše projekte.</p>
+    </div>
+</div>
+
+<div class="media-sections">
+    <div class="media-section">
+        <div class="section-header">
+            <i class="fas fa-file-pdf"></i>
+            <h2>Publikacije i studije</h2>
+            <p>Stručni članci, studije slučajeva i publikacije našeg tima</p>
+        </div>
+        <div class="coming-soon-card">
+            <i class="fas fa-hourglass-half"></i>
+            <h3>Uskoro dostupno</h3>
+            <p>Radimo na pripremi stručnih publikacija koje će vam pomoći u razumevanju energetske efikasnosti.</p>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="section-header">
+            <i class="fas fa-images"></i>
+            <h2>Galerija projekata</h2>
+            <p>Fotografije i vizuelni prikaz naših realizovanih projekata</p>
+        </div>
+        <div class="coming-soon-card">
+            <i class="fas fa-camera"></i>
+            <h3>Galerija se priprema</h3>
+            <p>Uskoro ćete moći da vidite fotografije i detalje o našim uspešno realizovanim projektima.</p>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="section-header">
+            <i class="fas fa-play-circle"></i>
+            <h2>Video materijali</h2>
+            <p>Edukacijski video sadržaji i prezentacije</p>
+        </div>
+        <div class="coming-soon-card">
+            <i class="fas fa-video"></i>
+            <h3>Video sadržaji</h3>
+            <p>Pripremamo edukacijske video materijale o energetskoj efikasnosti i našim uslugama.</p>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="section-header">
+            <i class="fas fa-newspaper"></i>
+            <h2>Vesti i najave</h2>
+            <p>Najnovije vesti iz oblasti energetske efikasnosti</p>
+        </div>
+        <div class="coming-soon-card">
+            <i class="fas fa-rss"></i>
+            <h3>Blog i vesti</h3>
+            <p>Blog sekcija sa najnovijim vestima, trendovima i savetima iz oblasti energetske efikasnosti.</p>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="section-header">
+            <i class="fas fa-download"></i>
+            <h2>Resursi za preuzimanje</h2>
+            <p>Korisni dokumenti, priručnici i alati</p>
+        </div>
+        <div class="coming-soon-card">
+            <i class="fas fa-folder-open"></i>
+            <h3>Download centar</h3>
+            <p>Priprema se biblioteka korisnih dokumenata koje možete besplatno preuzeti.</p>
+        </div>
+    </div>
+
+    <div class="media-section">
+        <div class="section-header">
+            <i class="fas fa-calendar-alt"></i>
+            <h2>Eventi i webinari</h2>
+            <p>Najave događaja, seminara i edukacijskih programa</p>
+        </div>
+        <div class="coming-soon-card">
+            <i class="fas fa-users"></i>
+            <h3>Kalendar događaja</h3>
+            <p>Uskoro ćemo objaviti kalendar naših edukacijskih programa i stručnih događaja.</p>
+        </div>
+    </div>
+</div>
+
+<div class="newsletter-signup">
+    <div class="newsletter-content">
+        <h2>Budite u toku sa najnovijim sadržajima</h2>
+        <p>Prijavite se za naš newsletter i budite prvi koji će saznati kada novi medijski sadržaji budu dostupni.</p>
+
+        <form class="newsletter-form">
+            <div class="form-group">
+                <input type="email" placeholder="Vaša email adresa" required>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Prijavite se
+                </button>
+            </div>
+            <p class="privacy-note">
+                <small>Poštujemo vašu privatnost. Možete se odjaviti u bilo kom trenutku.</small>
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="contact-suggestion">
+    <div class="suggestion-content">
+        <h3>Potreban vam je specifičan sadržaj?</h3>
+        <p>Ako tražite određene informacije ili materijale koji nisu dostupni, slobodno nas kontaktirajte. Trudićemo se da vam pomognemo.</p>
+        <a href="{{ '/kontakt/' | relative_url }}" class="btn btn-outline">Kontaktiraj nas</a>
+    </div>
+</div>
+
+<style>
+.media-intro {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.intro-content .lead {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.media-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.media-section {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.media-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.section-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.section-header i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.section-header h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.section-header p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.coming-soon-card {
+    padding: 2rem;
+    text-align: center;
+    background: var(--bg-light);
+}
+
+.coming-soon-card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.coming-soon-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.coming-soon-card p {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.newsletter-signup {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.newsletter-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    max-width: 500px;
+    margin: 0 auto 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form button {
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.newsletter-form button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form button i {
+    margin-right: 0.5rem;
+}
+
+.privacy-note {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.contact-suggestion {
+    background: var(--bg-light);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.suggestion-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.suggestion-content p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .media-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form .form-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .newsletter-signup {
+        padding: 3rem 1rem;
+    }
+
+    .contact-suggestion {
+        padding: 2rem 1rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.querySelector('.newsletter-form');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = this.querySelector('input[type="email"]').value;
+            const button = this.querySelector('button');
+            const originalHTML = button.innerHTML;
+
+            // Show loading state
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Prijavljuje se...';
+            button.disabled = true;
+
+            // Simulate subscription (replace with actual implementation)
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    Uspešno ste se prijavili za newsletter! Hvala vam.
+                `;
+                successMessage.style.cssText = `
+                    background: rgba(255, 255, 255, 0.2);
+                    color: white;
+                    padding: 1rem;
+                    border-radius: var(--border-radius);
+                    margin-top: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    backdrop-filter: blur(10px);
+                `;
+
+                this.appendChild(successMessage);
+
+                // Reset form
+                this.reset();
+
+                // Reset button
+                button.innerHTML = originalHTML;
+                button.disabled = false;
+
+                // Remove success message after 5 seconds
+                setTimeout(() => {
+                    if (successMessage.parentNode) {
+                        successMessage.remove();
+                    }
+                }, 5000);
+
+            }, 1500);
+        });
+    }
+});
+</script>

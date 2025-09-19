@@ -1,0 +1,337 @@
+---
+layout: page
+title: "Offline"
+permalink: /offline.html
+sitemap: false
+---
+
+<div class="offline-page">
+    <div class="offline-content">
+        <div class="offline-icon">
+            <i class="fas fa-wifi"></i>
+            <div class="offline-slash"></div>
+        </div>
+
+        <h1 class="offline-title">Nema internet konekcije</h1>
+
+        <p class="offline-description">
+            Izgleda da nemate internet konekciju. Ova stranica radi offline,
+            ali za najnovije informacije potrebna vam je internet konekcija.
+        </p>
+
+        <div class="offline-suggestions">
+            <h3>Šta možete da uradite:</h3>
+            <ul>
+                <li>Proverite internet konekciju</li>
+                <li>Restartujte router ili modem</li>
+                <li>Probajte ponovo za nekoliko minuta</li>
+                <li>Kontaktirajte vašeg internet provajdera</li>
+            </ul>
+        </div>
+
+        <div class="offline-actions">
+            <button onclick="checkConnection()" class="btn btn-primary" id="retry-btn">
+                <i class="fas fa-sync"></i>
+                Probaj ponovo
+            </button>
+            <a href="{{ '/' | relative_url }}" class="btn btn-outline">
+                <i class="fas fa-home"></i>
+                Početna strana
+            </a>
+        </div>
+
+        <div class="connection-status" id="connection-status">
+            <p class="status-text">Proverava se konekcija...</p>
+        </div>
+    </div>
+
+    <div class="offline-info">
+        <h3>O ENEPLUS kompaniji</h3>
+        <p>
+            ENEPLUS je konsultantska firma koja pruža usluge iz oblasti energetskog
+            menadžmenta, energetske efikasnosti i projektnog menadžmenta.
+        </p>
+
+        <div class="contact-info">
+            <h4>Kontakt informacije:</h4>
+            <p><strong>Telefon:</strong> {{ site.company.phone1 }}</p>
+            <p><strong>Telefon:</strong> {{ site.company.phone2 }}</p>
+            <p><strong>Email:</strong> {{ site.company.email }}</p>
+            <p><strong>Adresa:</strong> {{ site.company.address }}, {{ site.company.city }}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.offline-page {
+    text-align: center;
+    padding: 4rem 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.offline-content {
+    margin-bottom: 4rem;
+}
+
+.offline-icon {
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.offline-slash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 4px;
+    height: 120%;
+    background-color: #e74c3c;
+    border-radius: 2px;
+}
+
+.offline-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.offline-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.offline-suggestions {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.offline-suggestions h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.offline-suggestions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.offline-suggestions li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.offline-suggestions li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.offline-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.offline-actions .btn {
+    min-width: 150px;
+}
+
+.offline-actions .btn i {
+    margin-right: 0.5rem;
+}
+
+.connection-status {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.connection-status.checking {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+    display: block;
+}
+
+.connection-status.online {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.connection-status.offline {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+.offline-info {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    text-align: left;
+}
+
+.offline-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.offline-info p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact-info {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-top: 2rem;
+}
+
+.contact-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.retry-loading {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .offline-title {
+        font-size: 2rem;
+    }
+
+    .offline-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offline-actions .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .offline-suggestions {
+        text-align: center;
+    }
+
+    .offline-suggestions ul {
+        text-align: left;
+        display: inline-block;
+    }
+}
+</style>
+
+<script>
+let isChecking = false;
+
+async function checkConnection() {
+    if (isChecking) return;
+
+    isChecking = true;
+    const retryBtn = document.getElementById('retry-btn');
+    const statusDiv = document.getElementById('connection-status');
+    const retryIcon = retryBtn.querySelector('i');
+
+    // Show checking status
+    retryIcon.className = 'fas fa-spinner retry-loading';
+    retryBtn.disabled = true;
+    statusDiv.className = 'connection-status checking';
+    statusDiv.querySelector('.status-text').textContent = 'Proverava se konekcija...';
+
+    try {
+        // Try to fetch a small resource from the same origin
+        const response = await fetch('/', {
+            method: 'HEAD',
+            cache: 'no-cache'
+        });
+
+        if (response.ok) {
+            // Connection restored
+            statusDiv.className = 'connection-status online';
+            statusDiv.querySelector('.status-text').textContent = 'Konekcija je uspostavljena! Osvežavam stranicu...';
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        } else {
+            throw new Error('Response not ok');
+        }
+    } catch (error) {
+        // Still offline
+        statusDiv.className = 'connection-status offline';
+        statusDiv.querySelector('.status-text').textContent = 'Još uvek nema konekcije. Probajte ponovo.';
+
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            retryIcon.className = 'fas fa-sync';
+            retryBtn.disabled = false;
+            isChecking = false;
+        }, 2000);
+    }
+}
+
+// Check connection status periodically
+function periodicConnectionCheck() {
+    if (!isChecking && navigator.onLine) {
+        checkConnection();
+    }
+}
+
+// Listen for online/offline events
+window.addEventListener('online', () => {
+    const statusDiv = document.getElementById('connection-status');
+    statusDiv.className = 'connection-status online';
+    statusDiv.querySelector('.status-text').textContent = 'Konekcija je uspostavljena! Osvežavam stranicu...';
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 1000);
+});
+
+window.addEventListener('offline', () => {
+    const statusDiv = document.getElementById('connection-status');
+    statusDiv.className = 'connection-status offline';
+    statusDiv.querySelector('.status-text').textContent = 'Konekcija je izgubljena.';
+});
+
+// Check connection every 30 seconds
+setInterval(periodicConnectionCheck, 30000);
+
+// Initial check after page load
+setTimeout(periodicConnectionCheck, 2000);
+</script>
